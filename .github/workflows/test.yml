@@ -1,0 +1,17 @@
+name: Build and Deploy - Test
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    uses: nhst/infra-common-github-actions/.github/workflows/node-workflow-template.yaml@master
+    with:
+      node_version: '14.x.x'
+      image_name: dn-webapp
+      ecr_repository: frontline
+      namespace: editorial
+      action_env: TEST
+      source_dir: "build/dist"
+      destination_dir: "dn-webapp/app"
+      require_node_build: yes
+    secrets: inherit
