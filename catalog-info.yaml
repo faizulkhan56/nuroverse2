@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "aws-eks-from-template"
+spec:
+  type: service
+  owner: user:guest
+  lifecycle: experimental
